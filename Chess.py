@@ -13,7 +13,7 @@ possible_movements = []
 
 """---------------------------------------Classes des pieces----------------------------------------------------"""
 
-class Tower(ge.Character):
+class Rook(ge.Character):
     def __init__(self, container, color, coordinates, tag):
         self.clicked = False
         self.color = color
@@ -21,7 +21,7 @@ class Tower(ge.Character):
         self.tag=tag
         self.rook = False
         ge.Character.__init__(self, container=container,
-                                name=color+"_tower",
+                                name=color+"_rook",
                                 img_link="graphics/{}_tower.png".format(color),
                                 coordinates=coordinates,
                                 bheight=63,
@@ -184,7 +184,7 @@ class King(ge.Character):
 
         #return (bool, bool) ind0 == big rook ind1 == lil rook. the bool tells if you can do it or not
 
-class Fool(ge.Character):
+class Bishop(ge.Character):
     def __init__(self, container, color, coordinates, tag):
         self.clicked = False
         self.color = color
@@ -192,7 +192,7 @@ class Fool(ge.Character):
         self.tag=tag
         ge.Character.__init__(self, 
                                 container=container,
-                                name=color+"_fool",
+                                name=color+"_bishop",
                                 img_link="graphics/{}_fool.png".format(color),
                                 coordinates=coordinates,
                                 bheight=63,
@@ -203,7 +203,7 @@ class Fool(ge.Character):
         trajectoires = foolPossibleMovements((self.coordinates[0]//63, self.coordinates[1]//63))
         return cutPiecePath(in_game_piece_list=in_game_piece_list, trajectoires=trajectoires, piece=self)
        
-class Horse(ge.Character):
+class Knight(ge.Character):
     def __init__(self, container, color, coordinates, tag):
         self.clicked = False
         self.color = color
@@ -211,7 +211,7 @@ class Horse(ge.Character):
         self.tag=tag
         ge.Character.__init__(self, 
                                 container=container,
-                                name=color+"_horse",
+                                name=color+"_knight",
                                 img_link="graphics/{}_horse.png".format(color),
                                 coordinates=coordinates,
                                 bheight=63,
